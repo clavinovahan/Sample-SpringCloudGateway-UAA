@@ -37,8 +37,7 @@ public class GatewayApplication {
 
 
 	@GetMapping("/")
-	public String test() {
-		
+	public String test() {		
 		return "Test OK";
 	}
 
