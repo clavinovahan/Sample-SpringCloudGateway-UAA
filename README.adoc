@@ -6,3 +6,9 @@
 * Run UAA Server -> `./gradlew -b uaa-server/build.gradle uaa`
 * Run Gateway -> `./gradlew -b gateway/build.gradle bootRun`
 * Go to `http://localhost:8080` and login to UAA using *user1/password*
+
+When you hit URL, http://localhost:8080/, the gateway will go through OAuth2 flow and finally show Test OK page. See the logs in Gateway project sample.log, you will find line
+
+[reactor-http-nio-2] r.n.resources.PooledConnectionProvider : Creating new client pool [http] for localhost:8090
+
+That means whatever http client or server customization does not take effective on the reactor.netty.http.client.HttpClientConnect as it still use Pool.
