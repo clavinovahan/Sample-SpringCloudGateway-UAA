@@ -34,8 +34,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @SpringBootApplication
 public class GatewayApplication {
+
+
 	@GetMapping("/")
-	public String test() {		
+	public String test() {
+		
 		return "Test OK";
 	}
 
