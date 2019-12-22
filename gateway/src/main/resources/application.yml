@@ -19,6 +19,11 @@ logging:
   pattern:
     console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36}:%L - %msg%n"
 spring:
+  cloud:
+    gateway:
+      httpclient:
+        pool:
+          type: DISABLED
   security:
     oauth2:
       client:
