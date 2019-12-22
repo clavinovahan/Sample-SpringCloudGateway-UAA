@@ -3,13 +3,16 @@ package sample;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.reactive.ClientHttpConnector;
 import org.springframework.http.client.reactive.ReactorClientHttpConnector;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import reactor.netty.http.client.HttpClient;
 import reactor.netty.resources.ConnectionProvider;
+import reactor.netty.tcp.TcpClient;
 
+@Configuration
 public class WebClientConfig {
 	private static final Logger LOG = LoggerFactory.getLogger(WebClientConfig.class);
 
@@ -22,6 +25,6 @@ public class WebClientConfig {
 	
 	@Bean
 	public ClientHttpConnector clientHttpConnector() {
-		return new ReactorClientHttpConnector(HttpClient.create(ConnectionProvider.newConnection()));
+		return new ReactorClientHttpConnector(HttpClient.from(TcpClient.newConnection()));
 	}
 }
