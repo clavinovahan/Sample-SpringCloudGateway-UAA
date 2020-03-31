@@ -9,6 +9,6 @@
 
 When you hit URL, http://localhost:8080/, the gateway will go through OAuth2 flow and finally show Test OK page. See the logs in Gateway project sample.log, you will find line
 
-PooledConnectionProvider   : Creating new client pool [http] for localhost:8090
+r.n.resources.PooledConnectionProvider   : [id: 0xe15dddf3, L:/127.0.0.1:62231 - R:localhost/127.0.0.1:8090] onStateChange(POST{uri=/uaa/oauth/token, connection=PooledConnection ...
 
 That means the customization on WebClient used by Spring Security does not take effective on the reactor.netty.http.client.HttpClientConnect as it still use Pool.
