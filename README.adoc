@@ -11,4 +11,4 @@ When you hit URL, http://localhost:8080/, the gateway will go through OAuth2 flo
 
 PooledConnectionProvider   : Creating new client pool [http] for localhost:8090
 
-That means whatever http client or server customization does not take effective on the reactor.netty.http.client.HttpClientConnect as it still use Pool.
+That means the customization on WebClient used by Spring Security does not take effective on the reactor.netty.http.client.HttpClientConnect as it still use Pool.
