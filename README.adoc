@@ -1,4 +1,4 @@
-= OpenID Connect via Spring Cloud Gateway
+= Spring Cloud Gateway - Customized Web Client
 
 == Run the Sample
 
